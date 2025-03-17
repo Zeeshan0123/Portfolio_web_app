@@ -1,0 +1,98 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 220 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 15%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 14% 90%;
+    --secondary-foreground: 220 10% 15%;
+
+    --muted: 220 14% 90%;
+    --muted-foreground: 220 8% 40%;
+
+    --accent: 220 14% 90%;
+    --accent-foreground: 220 10% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+}
+
+.card-hover {
+  @apply transition-transform duration-300 hover:-translate-y-2;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(10px); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-15px) translateX(-10px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-10px) translateX(5px); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@layer utilities {
+  .animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+  .animate-float-medium {
+    animation: float-medium 6s ease-in-out infinite;
+  }
+  .animate-float-fast {
+    animation: float-fast 4s ease-in-out infinite;
+  }
+  .animate-gradient-shift {
+    animation: gradient-shift 15s ease infinite;
+    background-size: 400% 400%;
+  }
+  
+}
